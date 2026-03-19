@@ -1,0 +1,39 @@
+services:
+  backend:
+    build: .
+    container_name: sentinel_backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - .:/app
+
+  worker:
+    build: .
+    container_name: sentinel_worker
+    command: celery -A app.tasks worker --loglevel=info
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - .:/app
+
+  postgres:
+    image: postgres:15
+    container_name: sentinel_postgres
+    environment:
+      POSTGRES_USER: sentinel
+      POSTGRES_PASSWORD: sentinel
+      POSTGRES_DB: sentinel_db
+
+  redis:
+    image: redis:7
+    container_name: sentinel_redis
+    ports:
+      - "6379:6379"
