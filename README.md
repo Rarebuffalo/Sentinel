@@ -6,10 +6,10 @@
 
 ---
 
-## ⚡ What is Sentinel?
+##  What is Sentinel?
 Sentinel is a lightweight, startup-ready **Uptime and API Monitoring** dashboard. It functions similarly to Pingdom or UptimeRobot, allowing users to configure HTTP endpoints, set custom polling intervals, and track response times. If an endpoint fails (returns 4xx, 5xx, or times out), Sentinel dispatches real-time alerts via Webhooks, Email, Slack, or Discord.
 
-## 🛠️ The Tech Stack
+##  The Tech Stack
 
 ### Backend (Core API)
 The entire backend engine is completely asynchronous and built for high throughput.
@@ -36,7 +36,7 @@ A beautiful, highly interactive Single Page Application (SPA).
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 ### 1. Multi-Tenant Architecture & Auth
 - **Sign up & Login**: Full JWT implementation. Your dashboard only shows *your* endpoints.
@@ -58,7 +58,7 @@ A beautiful, highly interactive Single Page Application (SPA).
 
 ---
 
-## 💻 Local Quickstart
+##  Local Quickstart
 
 ### 1. Clone & Database Setup
 1. Define your Postgres Database URI in a `.env` file under `DATABASE_URL=postgresql://user:pass@localhost/sentinel`.
